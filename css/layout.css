@@ -614,7 +614,17 @@ header nav a[aria-current="page"] {
         flex: 1 1 0;
     }
 
+    .nosotros {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 3rem;
+        align-items: start;
+    }
+
+    .historia {
+        grid-column: 1 / -1;
+    }
+
     .principios_lista {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
