@@ -681,3 +681,226 @@
     outline: 3px solid var(--c-marfil);
     outline-offset: 3px;
 }
+
+.contacto_titulo {
+    font-family: var(--f-display);
+    font-size: clamp(2.6rem, 11vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--c-verde);
+}
+
+.contacto_cabecera p {
+    max-width: 36rem;
+    color: var(--c-beige);
+}
+
+.contacto_dato {
+    display: grid;
+    gap: 0.4rem;
+    padding: var(--espacio-3);
+    color: var(--c-bosque);
+    background: var(--c-beige);
+    border-radius: 22px;
+    transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.contacto_dato:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contacto_dato h2 {
+    font-family: var(--f-cuerpo);
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.contacto_dato a:hover {
+    text-decoration: underline;
+}
+
+.contacto_icono {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    background: var(--c-verde);
+    border-radius: 12px;
+}
+
+.contacto_icono svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: none;
+    stroke: var(--c-bosque);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.formulario {
+    position: relative;
+    display: grid;
+    gap: var(--espacio-2);
+    padding: var(--espacio-4) var(--espacio-3) var(--espacio-3);
+    color: var(--c-bosque);
+    background: var(--c-beige);
+    border-radius: 28px;
+}
+
+.formulario_etiqueta {
+    position: absolute;
+    top: -0.8rem;
+    left: 1.2rem;
+    padding: 0.2rem 0.9rem;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--c-verde);
+    border-radius: 999px;
+}
+
+.campo {
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font: inherit;
+    font-weight: 600;
+    color: var(--c-texto);
+    background: var(--c-blanco);
+    border: 2px solid #cfcaa0;
+    border-radius: 14px;
+    transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--c-verde);
+}
+
+.campo input:not(:placeholder-shown):valid,
+.campo textarea:not(:placeholder-shown):valid {
+    border-color: var(--c-verde);
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.25);
+}
+
+.campo input:not(:placeholder-shown):invalid,
+.campo textarea:not(:placeholder-shown):invalid {
+    border-color: #d9534f;
+    box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.2);
+}
+
+.campo_error {
+    display: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #b03a37;
+}
+
+.campo input:not(:placeholder-shown):invalid ~ .campo_error,
+.campo textarea:not(:placeholder-shown):invalid ~ .campo_error {
+    display: block;
+}
+
+.boton-formulario {
+    display: inline-flex;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font: inherit;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-beige);
+    cursor: pointer;
+    background: var(--c-bosque);
+    border: 0;
+    border-radius: 999px;
+    transition: transform var(--transicion), background var(--transicion);
+}
+
+.boton-formulario span {
+    transition: transform var(--transicion);
+}
+
+.boton-formulario:hover {
+    background: var(--c-verde-medio);
+}
+
+.boton-formulario:hover span {
+    transform: translateX(6px);
+}
+
+.formulario:invalid .boton-formulario {
+    opacity: 0.65;
+}
+
+.mapa {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 28px;
+}
+
+.mapa img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.mapa:hover img {
+    transform: scale(1.05);
+}
+
+.mapa_texto {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--c-beige);
+    background: var(--c-bosque);
+    border-radius: 999px;
+}
+
+.contacto_redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-2);
+    align-items: center;
+    color: var(--c-beige);
+    font-weight: 800;
+}
+
+.contacto_redes ul {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.contacto_redes img {
+    width: 3rem;
+    height: 3rem;
+    transition: transform var(--transicion);
+}
+
+.contacto_redes a:hover img,
+.contacto_redes a:focus-visible img {
+    transform: scale(1.2);
+}
