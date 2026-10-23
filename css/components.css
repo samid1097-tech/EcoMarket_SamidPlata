@@ -1,0 +1,100 @@
+.boton-verde,
+.boton_beige {
+    display: inline-block;
+    padding: 1rem 2.2rem;
+    font-weight: 900;
+    font-size: 1.05rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c-bosque);
+    border: 3px solid transparent;
+    border-radius: 14px;
+    transition: transform var(--transicion), background-color var(--transicion),
+        color var(--transicion), border-color var(--transicion), box-shadow var(--transicion);
+}
+
+.boton-verde {
+    background: var(--c-verde);
+}
+
+.boton_beige {
+    background: var(--c-marfil);
+}
+
+.boton-verde:hover {
+    color: var(--c-verde);
+    background: var(--c-bosque);
+    border-color: var(--c-verde);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+}
+
+.boton_beige:hover {
+    color: var(--c-marfil);
+    background: transparent;
+    border-color: var(--c-marfil);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-1);
+    height: 100%;
+    padding: var(--espacio-2);
+    background: var(--c-blanco);
+    border: 3px solid transparent;
+    border-radius: 22px;
+    box-shadow: 0 6px 18px rgba(23, 61, 42, 0.08);
+    transition: transform var(--transicion), box-shadow var(--transicion),
+        border-color var(--transicion);
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    border-color: var(--c-verde);
+    box-shadow: 0 16px 32px rgba(23, 61, 42, 0.18);
+}
+
+.tarjeta img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: var(--espacio-1);
+    border-radius: 14px;
+    background: linear-gradient(160deg, #bdeec9, #3cb371);
+    transition: transform var(--transicion);
+}
+
+.tarjeta:hover img {
+    transform: scale(1.03);
+}
+
+.tarjeta p {
+    color: var(--c-texto-suave);
+    font-size: 0.95rem;
+}
+
+.tarjeta .tarjeta_precio {
+    margin-top: auto;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--c-texto);
+}
+
+.tarjeta > a {
+    display: block;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    font-weight: 800;
+    color: var(--c-bosque);
+    background: var(--c-verde-medio);
+    border-radius: 999px;
+    transition: background-color var(--transicion), color var(--transicion);
+}
+
+.tarjeta > a:hover {
+    color: var(--c-verde);
+    background: var(--c-bosque);
+}
