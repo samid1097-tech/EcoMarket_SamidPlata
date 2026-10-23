@@ -29,7 +29,7 @@ header {
     transform: scale(1.06);
 }
 
-nav ul {
+header nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -37,7 +37,7 @@ nav ul {
     gap: 0.25rem;
 }
 
-nav a {
+header nav a {
     display: inline-flex;
     align-items: center;
     padding: 0.5rem 0.75rem;
@@ -51,36 +51,36 @@ nav a {
         box-shadow var(--transicion);
 }
 
-nav a:hover {
+header nav a:hover {
     color: var(--c-verde);
     background: var(--c-bosque);
 }
 
-nav a[href*="#buscar"] {
+header nav a[href*="#buscar"] {
     color: var(--c-marfil);
     background: var(--c-bosque);
 }
 
-nav a[href*="#buscar"]:hover {
+header nav a[href*="#buscar"]:hover {
     color: var(--c-bosque);
     background: var(--c-marfil);
 }
 
-nav a[href*="carrito"] {
+header nav a[href*="carrito"] {
     background: var(--c-bosque);
 }
 
-nav a[href*="carrito"]:hover {
+header nav a[href*="carrito"]:hover {
     background: #1f5a3c;
     box-shadow: 0 0 0 3px var(--c-marfil);
 }
 
-nav a img {
+header nav a img {
     height: 24px;
     width: auto;
 }
 
-nav a[href*="carrito"] img {
+header nav a[href*="carrito"] img {
     filter: invert(1) hue-rotate(180deg) brightness(1.6);
     mix-blend-mode: screen;
 }
@@ -353,7 +353,7 @@ footer {
         border-radius: 999px;
     }
 
-    nav {
+    header nav {
         position: absolute;
         inset: 0;
         display: flex;
@@ -362,13 +362,13 @@ footer {
         pointer-events: none;
     }
 
-    nav a {
+    header nav a {
         padding: 0.6rem 1.1rem;
         font-size: 0.95rem;
         pointer-events: auto;
     }
 
-    nav li:nth-last-child(-n + 2) {
+    header nav li:nth-last-child(-n + 2) {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -376,11 +376,11 @@ footer {
         align-items: center;
     }
 
-    nav li:last-child {
+    header nav li:last-child {
         right: 0.75rem;
     }
 
-    nav li:nth-last-child(2) {
+    header nav li:nth-last-child(2) {
         right: 5rem;
     }
 
@@ -429,5 +429,116 @@ footer {
 
     .footer_marca {
         grid-column: auto;
+    }
+}
+
+header nav a[aria-current="page"] {
+    color: var(--c-verde);
+    background: var(--c-bosque);
+}
+
+.pagina-productos {
+    background-color: var(--c-bosque);
+}
+
+.pagina-productos::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    width: 100vh;
+    height: 100vw;
+    background:
+        linear-gradient(rgba(10, 36, 24, 0.82), rgba(10, 36, 24, 0.82)),
+        url("../img/hero/fondo-hero.jpg") center / cover no-repeat;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.catalogo {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 13rem var(--margen-pagina) var(--espacio-5);
+}
+
+.catalogo_cabecera {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-3);
+    margin-bottom: var(--espacio-4);
+    scroll-margin-top: 7rem;
+}
+
+.catalogo_titulo {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(3.2rem, 12vw, 6.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--c-verde);
+}
+
+.catalogo_cuerpo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-4);
+}
+
+.catalogo_cuerpo:has(#solo-stock:checked) .productos_item:has(.producto--agotado) {
+    display: none;
+}
+
+.productos_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-3);
+}
+
+.paginacion {
+    margin-top: var(--espacio-4);
+}
+
+.paginacion ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espacio-1);
+}
+
+@media (min-width: 600px) {
+    .catalogo {
+        padding-top: 11rem;
+    }
+
+    .productos_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .catalogo {
+        padding-top: 8rem;
+    }
+
+    .catalogo_cabecera {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--espacio-4);
+    }
+
+    .catalogo_cuerpo {
+        grid-template-columns: 17rem 1fr;
+        align-items: start;
+    }
+
+    .filtros {
+        position: sticky;
+        top: 6.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .productos_grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
