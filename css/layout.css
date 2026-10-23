@@ -628,3 +628,74 @@ header nav a[aria-current="page"] {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
+.pagina-contacto {
+    background-color: var(--c-bosque);
+}
+
+.pagina-contacto::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    width: 100vh;
+    height: 100vw;
+    background:
+        linear-gradient(rgba(10, 36, 24, 0.82), rgba(10, 36, 24, 0.82)),
+        url("../img/hero/fondo-hero.jpg") center / cover no-repeat;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.contacto {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--espacio-3);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 13rem var(--margen-pagina) var(--espacio-5);
+}
+
+.contacto_cabecera {
+    display: grid;
+    gap: var(--espacio-1);
+}
+
+.contacto_datos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--espacio-2);
+}
+
+.contacto_cuerpo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--espacio-3);
+}
+
+.contacto_lado {
+    display: grid;
+    gap: var(--espacio-3);
+    align-content: start;
+}
+
+@media (min-width: 600px) {
+    .contacto {
+        padding-top: 11rem;
+    }
+
+    .contacto_datos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 900px) {
+    .contacto {
+        padding-top: 8rem;
+    }
+
+    .contacto_cuerpo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+    }
+}
