@@ -437,11 +437,13 @@ header nav a[aria-current="page"] {
     background: var(--c-bosque);
 }
 
-.pagina-productos {
+.pagina-productos,
+.pagina-nosotros {
     background-color: var(--c-bosque);
 }
 
-.pagina-productos::before {
+.pagina-productos::before,
+.pagina-nosotros::before {
     content: "";
     position: fixed;
     top: 50%;
@@ -472,7 +474,7 @@ header nav a[aria-current="page"] {
 .catalogo_titulo {
     font-family: var(--f-display);
     font-weight: 400;
-    font-size: clamp(3.2rem, 12vw, 6.5rem);
+    font-size: clamp(2.6rem, 11vw, 6.5rem);
     line-height: 1;
     text-transform: uppercase;
     color: var(--c-verde);
@@ -480,7 +482,7 @@ header nav a[aria-current="page"] {
 
 .catalogo_cuerpo {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--espacio-4);
 }
 
@@ -490,7 +492,7 @@ header nav a[aria-current="page"] {
 
 .productos_grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--espacio-3);
 }
 
@@ -539,6 +541,80 @@ header nav a[aria-current="page"] {
 
 @media (min-width: 1200px) {
     .productos_grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.nosotros {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 13rem var(--margen-pagina) var(--espacio-5);
+}
+
+.historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacio-4);
+}
+
+.historia_imagen {
+    flex: none;
+    width: 100%;
+    max-width: 30rem;
+    margin: 0;
+}
+
+.historia_texto {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espacio-2);
+}
+
+.principios,
+.testimonios {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--espacio-4);
+}
+
+.principios_lista {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-3);
+}
+
+@media (min-width: 600px) {
+    .nosotros {
+        padding-top: 11rem;
+    }
+
+    .principios_lista {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .nosotros {
+        padding-top: 8rem;
+    }
+
+    .historia {
+        flex-direction: row;
+        gap: 4rem;
+    }
+
+    .historia_imagen,
+    .historia_texto {
+        flex: 1 1 0;
+    }
+
+    .principios_lista {
         grid-template-columns: repeat(4, 1fr);
     }
 }

@@ -76,7 +76,8 @@
     .blob2,
     .blob3,
     .blob4,
-    .fav_check:checked + .fav svg {
+    .fav_check:checked + .fav svg,
+    .principio:hover .principio_icono {
         animation: none;
     }
 }
@@ -90,5 +91,18 @@
     }
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes balanceo {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-12deg);
+    }
+    75% {
+        transform: rotate(12deg);
     }
 }
