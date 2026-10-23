@@ -75,7 +75,20 @@
     .blob1,
     .blob2,
     .blob3,
-    .blob4 {
+    .blob4,
+    .fav_check:checked + .fav svg {
         animation: none;
+    }
+}
+
+@keyframes latido {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
     }
 }
