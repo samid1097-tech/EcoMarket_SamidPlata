@@ -574,6 +574,7 @@
     background: var(--c-verde);
     border: 4px solid var(--c-bosque);
     border-radius: 50%;
+    object-fit: cover;
     transition: transform var(--transicion);
 }
 
